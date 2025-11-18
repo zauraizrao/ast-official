@@ -1,16 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* THEME TOKENS */
 @layer base {
-   body {
-    @apply font-sans;
-    min-height: 100vh;
-    background-color: #18181b;
-    color: hsl(var(--foreground));
-    -webkit-font-smoothing: antialiased;
-  }
   :root {
     /* main page & text */
     --background: 0 0% 6%;    /* deep black */
@@ -76,9 +72,16 @@
     min-height: 100vh;
     background-color: #18181b; /* outer gray around the rounded dashboard */
     color: hsl(var(--foreground));
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-      "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
+
+    /* 👇 this is the important part */
+    font-family:
+      "Poppins",          /* main UI font */
+      "Inter",            /* fallback UI font */
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      sans-serif;
   }
 }
 
