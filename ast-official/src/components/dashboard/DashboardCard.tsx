@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
+import cardBackground from "@/lib/image 3.png";
 
 interface DashboardCardProps {
   title: string;
@@ -16,7 +17,7 @@ export const DashboardCard = ({
   subtitle,
   icon: Icon,
   badge,
-  imageSrc,
+  imageSrc = cardBackground,  
   variant = "default",
   progress,
 }: DashboardCardProps) => {
@@ -31,7 +32,7 @@ export const DashboardCard = ({
     >
       {/* Background Image */}
       {imageSrc && (
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-70">
           <img src={imageSrc} alt="" className="w-full h-full object-cover" />
         </div>
       )}
@@ -50,6 +51,7 @@ export const DashboardCard = ({
             <span className="text-sm font-medium text-foreground">{badge}</span>
           </div>
         )}
+
         {progress !== undefined && (
           <div className="flex-1 ml-4">
             <div className="w-full h-2 bg-background/30 rounded-full overflow-hidden">

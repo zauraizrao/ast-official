@@ -7,25 +7,48 @@ interface QuickActionButtonProps {
   onClick?: () => void;
 }
 
-export const QuickActionButton = ({ label, icon: Icon, onClick }: QuickActionButtonProps) => {
+export const QuickActionButton = ({
+  label,
+  icon: Icon,
+  onClick,
+}: QuickActionButtonProps) => {
+  const LeadingIcon = Icon ?? ArrowRight;
+
   return (
     <button
       onClick={onClick}
       className={cn(
         "group relative overflow-hidden",
-        "flex items-center justify-between gap-3 px-6 py-4 rounded-xl",
-        "bg-gradient-to-r from-primary to-primary/90",
-        "text-primary-foreground font-semibold",
-        "transition-all duration-300",
-        "hover:shadow-[0_0_30px_rgba(255,68,51,0.4)]",
-        "hover:scale-105"
+        // keep it as small as the content instead of huge
+        "inline-flex items-center gap-3",
+        // smaller padding -> smaller button
+        "px-6 py-2.5",
+        // pill shape
+        "rounded-full",
+        // red gradient
+        "bg-gradient-to-r from-red-500 to-red-700",
+        // text
+        "text-white font-semibold text-sm md:text-base",
+        // subtle animation
+        "transition-transform transition-shadow duration-300",
+        "hover:scale-[1.02] hover:shadow-lg"
       )}
     >
-      <div className="flex items-center gap-3">
-        {Icon && <Icon className="w-5 h-5" />}
-        <span>{label}</span>
-      </div>
-      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+      {/* Left circular icon */}
+      <span
+        className={cn(
+          "flex items-center justify-center",
+          // slightly smaller circle
+          "w-7 h-7 rounded-full",
+          "bg-black/50",
+          "transition-colors duration-300 group-hover:bg-black/70"
+        )}
+      >
+        <LeadingIcon className="w-3.5 h-3.5" />
+      </span>
+
+      {/* Label */}
+      <span className="whitespace-nowrap">{label}</span>
     </button>
   );
 };
