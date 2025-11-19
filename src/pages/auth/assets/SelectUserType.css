@@ -1,0 +1,277 @@
+/* src/pages/athletes/SelectUserType.css */
+
+/* ===== ROOT LAYOUT ===== */
+
+.select-type-root {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(circle at bottom left, #7a1016 0, transparent 55%),
+    radial-gradient(circle at top right, #d3382e 0, transparent 55%),
+    #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 32px; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #ffffff;
+}
+
+/* Main card (left + right) – centered like in Figma */
+
+.select-type-shell {
+  width: min(1280px, 100%);
+  border-radius: 40px;
+  background: #050505;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+}
+
+/* ===== LEFT SIDE ===== */
+
+.select-type-left {
+  flex: 0 0 52%;
+  padding: 48px 48px 32px;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+}
+
+/* logo */
+
+.select-type-logo {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  margin-bottom: 48px;
+}
+
+.select-type-logo__a {
+  color: #ffffff;
+}
+
+.select-type-logo__st {
+  color: #ff3232;
+}
+
+/* heading */
+
+.select-type-heading h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.select-type-heading p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #c0c0c0;
+  max-width: 390px;
+  margin: 0 0 28px;
+}
+
+/* role cards */
+
+.select-type-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.role-card {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: border-color 0.18s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.role-card--athlete {
+  background: linear-gradient(90deg, #9b111e, #65010f);
+}
+
+.role-card--coach {
+  background: linear-gradient(90deg, #b37a1b, #6e4300);
+}
+
+.role-card--tutor {
+  background: linear-gradient(90deg, #0b6b4c, #023427);
+}
+
+.role-card--selected {
+  border-color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+}
+
+.role-card:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.role-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.role-card__label {
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+
+.role-card__description {
+  font-size: 12px;
+  color: rgba(187, 187, 187, 0.9);
+  max-width: 260px;
+}
+
+/* placeholder for small illustration */
+
+.role-card__image-placeholder {
+  height: 60px;
+  width: 80px;
+  /* border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.4); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* slider indicator */
+
+.select-type-slider {
+  margin: 28px 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.select-type-slider__track {
+  width: 160px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.select-type-slider__thumb {
+  position: absolute;
+  width: 44px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ffffff;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* continue button */
+
+.select-type-continue-btn {
+  width: 100%;
+  border-radius: 999px;
+  padding: 13px 18px;
+  border: none;
+  background: #ffffff;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-color 0.16s ease, transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.select-type-continue-btn:hover {
+  background: #f3f3f3;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== RIGHT SIDE (IMAGE PANEL) ===== */
+
+.select-type-right {
+  flex: 0 0 48%;
+  position: relative;
+  background: #151515;
+}
+
+/* Inner rounded image area */
+
+.select-type-right::before {
+  content: "";
+  position: absolute;
+  inset: 0px 0px 0px 0px;
+  border-radius: 28px;
+    height: 100%;
+    width: 100%;
+  background-image: url("./images/Bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* dark gradient overlay */
+
+.select-type-right__image-overlay {
+  position: absolute;
+  inset: 0px 0px 0px 0px;
+  border-radius: 28px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 960px) {
+  .select-type-root {
+    padding: 16px;
+  }
+
+  .select-type-shell {
+    flex-direction: column;
+  }
+
+  .select-type-left {
+    flex: 0 0 auto;
+    padding: 32px 24px 24px;
+  }
+
+  .select-type-right {
+    flex: 0 0 auto;
+    height: 260px;
+  }
+
+  .select-type-right::before,
+  .select-type-right__image-overlay {
+    inset: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .select-type-left {
+    padding: 24px 20px 20px;
+  }
+
+  .select-type-heading h1 {
+    font-size: 22px;
+  }
+
+  .select-type-heading p {
+    font-size: 13px;
+  }
+}

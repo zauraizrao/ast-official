@@ -1,0 +1,196 @@
+/* full page background */
+.ps-root {
+  min-height: 100vh;
+  width: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 24px; */
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* big rounded area (bottom card) */
+.ps-shell {
+  position: relative;
+  width: 100%;
+  /* max-width: 1200px; */
+  height: 100vh;
+  border-radius: 40px;
+  background: #050505;
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* top radial glow like in the design */
+.ps-shell::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 60, 80, 0.75),
+    transparent 65%
+  );
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* AST logo */
+.ps-logo {
+  position: relative;
+  margin-top: 60px;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.ps-logo-a {
+  color: #ffffff;
+}
+
+.ps-logo-st {
+  color: #ff3232;
+}
+
+/* center wrapper for the inner receipt card */
+.ps-card-wrapper {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* receipt card itself */
+.ps-card {
+  width: 360px;
+  max-width: 100%;
+  padding: 24px 26px 26px;
+  border-radius: 26px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+  text-align: left;
+}
+
+/* little emoji at top of card */
+.ps-emoji {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+/* title & subtitle inside card */
+.ps-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.ps-subtitle {
+  font-size: 13px;
+  text-align: center;
+  color: rgba(220, 220, 220, 0.9);
+  margin: 0 0 18px;
+}
+
+/* info rows */
+.ps-info {
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.ps-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.ps-info-label {
+  color: rgba(180, 180, 180, 0.95);
+}
+
+.ps-info-value {
+  color: #f5f5f5;
+}
+
+.ps-info-link {
+  color: #4f8dff;
+}
+
+/* button inside the card */
+.ps-card-btn {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #161616;
+  color: rgba(240, 240, 240, 0.9);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* bottom buttons area */
+.ps-bottom-actions {
+  position: relative;
+  padding: 26px 0 40px;
+  display: flex;
+  gap: 14px;
+}
+
+/* shared styles for bottom buttons */
+.ps-bottom-btn {
+  min-width: 180px;
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* left dark button */
+.ps-bottom-btn--ghost {
+  background: #111111;
+  color: rgba(240, 240, 240, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* right white button */
+.ps-bottom-btn--primary {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .ps-root {
+    padding: 16px;
+  }
+
+  .ps-shell {
+    height: auto;
+  }
+
+  .ps-bottom-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ps-bottom-btn {
+    width: 70%;
+  }
+}

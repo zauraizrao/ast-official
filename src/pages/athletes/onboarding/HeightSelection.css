@@ -1,0 +1,146 @@
+/* src/pages/athletes/onboarding/HeightSelection.css */
+
+/* Whole picker section */
+.height-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 72px;
+}
+
+/* Wrapper around column + pill */
+.height-wrapper {
+  position: relative;
+  width: 420px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scrollable numbers column (centered) */
+.height-scroll-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 220px;
+  overflow: hidden;
+}
+
+/* inner scroll */
+.height-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 0;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* hide scrollbar */
+.height-scroll::-webkit-scrollbar {
+  display: none;
+}
+.height-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* individual numbers */
+.height-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-size: 13px;
+  color: #707070;
+  flex-shrink: 0;
+  transition: all 0.12s ease;
+  font-weight: 500;
+}
+
+.height-number.active {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* top / bottom fade */
+.height-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.height-overlay-top {
+  top: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, #050505, transparent);
+}
+
+.height-overlay-bottom {
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(to top, #050505, transparent);
+}
+
+/* Pill + label block in the middle */
+.height-pill-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* small label over pill */
+.height-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #979797;
+  letter-spacing: 0.03em;
+}
+
+/* Dark pill behind value */
+.height-pill {
+  width: 320px;
+  height: 64px;
+  border-radius: 999px;
+  background: #101010;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Value inside pill */
+.height-number-display {
+  font-size: 34px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.height-unit-display {
+  font-size: 16px;
+  color: #bababa;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* optional: slight scale down on small screens */
+@media (max-width: 768px) {
+  .height-wrapper {
+    transform: scale(0.9);
+  }
+}

@@ -1,0 +1,22 @@
+.primary-btn {
+  margin: 44px auto 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 80px;
+  border-radius: 999px;
+  border: none;
+
+  background: #ffffff;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+}
+
+.primary-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

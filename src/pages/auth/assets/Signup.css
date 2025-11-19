@@ -1,0 +1,253 @@
+/* src/pages/athletes/Signup.css */
+
+/* ===== ROOT (page background) ===== */
+
+.signup-root {
+  min-height: 100vh;
+  width: 100%;
+  /* dark background with soft red corners, like other screens */
+  background:
+    radial-gradient(circle at bottom left, #7a1016 0, transparent 55%),
+    radial-gradient(circle at top right, #d3382e 0, transparent 55%),
+    #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 24px; */
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===== BIG ROUNDED CARD ===== */
+
+.signup-shell {
+  position: relative;
+  width: 100%;        
+  height: 100vh;
+  /* border-radius: 40px; */
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+}
+
+/* full-card background image */
+.signup-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./images/f7c08ded4ec1b4b24a5f01809fdd2c941d226b85.jpg");  /* 👈 put your real image in /public */
+  background-size: cover;
+  background-position: center;
+}
+
+/* dark + red overlay over WHOLE card */
+.signup-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.88),
+    rgba(0, 0, 0, 0.65) 45%,
+    rgba(222, 60, 60, 0.48)
+  );
+}
+
+/* ===== INNER CONTENT ===== */
+
+.signup-inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+
+  /* center the content block inside the big background */
+  max-width: 880px;
+  margin: 0 auto;
+
+  /* inner spacing like the design */
+  padding: 56px 80px 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+/* LOGO */
+
+.signup-logo {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-bottom: 46px;
+}
+
+.signup-logo-a {
+  color: #ffffff;
+}
+
+.signup-logo-st {
+  color: #ff3232;
+}
+
+/* HEADING + DESCRIPTION */
+
+.signup-heading h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.signup-heading p {
+  margin: 0 0 28px;
+  font-size: 14px;
+  max-width: 460px;
+  color: rgba(230, 230, 230, 0.9);
+}
+
+/* FORM */
+
+.signup-form {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* INPUT ROWS (big dark rounded boxes) */
+
+.signup-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75);
+}
+
+.signup-input-icon {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.signup-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.signup-input::placeholder {
+  color: rgba(220, 220, 220, 0.8);
+}
+
+/* "Continuare" text under form */
+
+.signup-continue-link {
+  margin-top: 14px;
+  align-self: center;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  color: #38a4ff;
+  cursor: pointer;
+}
+
+.signup-continue-link:hover {
+  color: #63c1ff;
+}
+
+/* SOCIAL BUTTONS (wide black strips) */
+
+.signup-social {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.signup-social-btn {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 18px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.78);
+  font-size: 14px;
+}
+
+.signup-social-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* little circle where the Google / Apple logo will go */
+.signup-social-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+.signup-social-icon-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+/* TERMS TEXT AT BOTTOM */
+
+.signup-terms {
+  font-size: 11px;
+  color: rgba(240, 240, 240, 0.86);
+  text-align: center;
+  max-width: 720px;
+}
+
+.signup-terms-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .signup-root {
+    padding: 16px;
+  }
+
+  .signup-shell {
+    height: auto;
+  }
+
+  .signup-inner {
+    padding: 40px 24px 28px;
+  }
+
+  .signup-heading h1 {
+    font-size: 24px;
+  }
+}
